@@ -16,7 +16,7 @@ const removeProduct = async (id) => {
   const resp =  confirm('¿Está seguro de eliminar este registro?')
   if(!resp ) return
   await axios.delete('http://localhost/practica/laravel-api/public/api/products/' + id)
-  await getBrands()
+  await getProducts()
 }
 
 
@@ -68,7 +68,7 @@ getProducts()
           >
             Editar
           </button>
-          <button type="button" class="btn btn-danger btn-sm ml-2" @click="removeBrand(prod.id)">
+          <button type="button" class="btn btn-danger btn-sm ml-2" @click="removeProduct(prod.id)">
             Eliminar
           </button>
         </td>
